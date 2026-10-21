@@ -2,7 +2,23 @@
 
 Método probado: `bubbleSort` (ordena enteros en forma ascendente).
 
+
 ## 1. Grafo de flujo de control
+
+Código analizado (`src/bubble_sort.py`), con los nodos del grafo marcados en los comentarios:
+
+```python
+def bubble_sort(self, vet):
+    n = len(vet)                                   # nodo 1
+    for i in range(n - 1, 0, -1):                  # nodo 2 (D1: ciclo externo)
+        # nodo 3: inicia el ciclo interno
+        for j in range(0, i):                      # nodo 4 (D2: ciclo interno)
+            if vet[j] > vet[j + 1]:                # nodo 5 (D3: comparación)
+                vet[j], vet[j + 1] = vet[j + 1], vet[j]   # nodo 6 (intercambio)
+            # nodo 7: siguiente j
+        # nodo 8: siguiente i
+    return vet                                     # nodo 9
+```
 
 Nodos (numerados sobre el código):
 
